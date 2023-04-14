@@ -63,11 +63,11 @@ dependencies {
 </repositories>
 
 <dependencies>
-<dependency>
-    <groupId>dev.lyzev.api</groupId>
-    <artifactId>events</artifactId>
-    <version>${version}</version>
-</dependency>
+    <dependency>
+        <groupId>dev.lyzev.api</groupId>
+        <artifactId>events</artifactId>
+        <version>${version}</version>
+    </dependency>
 </dependencies>
 ```
 

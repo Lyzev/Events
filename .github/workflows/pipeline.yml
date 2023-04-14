@@ -8,8 +8,6 @@ on:
 
 jobs:
   dokka:
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,13 +18,11 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ env.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ACTION_TOKEN }}
           publish_dir: ./build/dokka/html
           publish_branch: gh-pages
           destination_dir: ./dokka
   qodana:
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -37,7 +33,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ env.GITHUB_TOKEN }}
+          github_token: ${{ secrets.ACTION_TOKEN }}
           publish_dir: ${{ runner.temp }}/qodana/results/report
           publish_branch: gh-pages
           destination_dir: ./qodana
