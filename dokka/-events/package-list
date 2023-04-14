@@ -4,6 +4,7 @@ $dokka.location:dev.lyzev.api.events////PointingToDeclaration/-events/dev.lyzev
 $dokka.location:dev.lyzev.api.events//on/dev.lyzev.api.events.EventListener#kotlin.Int#kotlin.Function1[TypeParam(bounds=[dev.lyzev.api.events.Event]),kotlin.Unit]/PointingToDeclaration/-events/dev.lyzev.api.events/on.html
 $dokka.location:dev.lyzev.api.events/CancellableEvent///PointingToDeclaration/-events/dev.lyzev.api.events/-cancellable-event/index.html
 $dokka.location:dev.lyzev.api.events/CancellableEvent/CancellableEvent/#/PointingToDeclaration/-events/dev.lyzev.api.events/-cancellable-event/-cancellable-event.html
+$dokka.location:dev.lyzev.api.events/CancellableEvent/fire/#/PointingToDeclaration/-events/dev.lyzev.api.events/-cancellable-event/fire.html
 $dokka.location:dev.lyzev.api.events/CancellableEvent/isCancelled/#/PointingToDeclaration/-events/dev.lyzev.api.events/-cancellable-event/is-cancelled.html
 $dokka.location:dev.lyzev.api.events/Event///PointingToDeclaration/-events/dev.lyzev.api.events/-event/index.html
 $dokka.location:dev.lyzev.api.events/Event/fire/#/PointingToDeclaration/-events/dev.lyzev.api.events/-event/fire.html
