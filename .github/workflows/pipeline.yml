@@ -19,6 +19,7 @@ jobs:
           cache: gradle
       - name: Setup
         run: 'chmod +x ./gradlew'
+      - name: Dokka Build
         run: './gradlew dokkaHtml'
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
