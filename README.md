@@ -29,7 +29,7 @@ repositories {
 }
 
 dependencies {
-    implementation("dev.lyzev.api:events:v${version}")
+    implementation("com.github.Lyzev:Events:v${version}")
 }
 ```
 
@@ -44,7 +44,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'dev.lyzev.api:events:v${version}'
+    implementation 'com.github.Lyzev:Events:v${version}'
 }
 ```
 
@@ -64,8 +64,8 @@ dependencies {
 
 <dependencies>
     <dependency>
-        <groupId>dev.lyzev.api</groupId>
-        <artifactId>events</artifactId>
+        <groupId>com.github.Lyzev</groupId>
+        <artifactId>Events</artifactId>
         <version>v${version}</version>
     </dependency>
 </dependencies>
