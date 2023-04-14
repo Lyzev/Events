@@ -68,4 +68,9 @@ interface Event {
 abstract class CancellableEvent : Event {
     // Flag indicating whether this event has been cancelled or not
     var isCancelled: Boolean = false
+
+    override fun fire() {
+        isCancelled = false
+        super.fire()
+    }
 }

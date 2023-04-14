@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "dev.lyzev.api"
-version = "1.0.0"
+version = "1.0.1"
 
 repositories {
     mavenCentral()
@@ -19,7 +19,7 @@ dependencies {
 }
 
 kotlin {
-    jvmToolchain(18)
+    jvmToolchain(17)
 }
 
 tasks.getByName<DokkaTask>("dokkaHtml") {
@@ -27,11 +27,11 @@ tasks.getByName<DokkaTask>("dokkaHtml") {
 }
 
 tasks.compileKotlin {
-    kotlinOptions.jvmTarget = "18"
+    kotlinOptions.jvmTarget = "17"
 }
 
 tasks.compileTestKotlin {
-    kotlinOptions.jvmTarget = "18"
+    kotlinOptions.jvmTarget = "17"
 }
 
 publishing {
@@ -39,7 +39,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "dev.lyzev.api"
             artifactId = "events"
-            version = "1.0.0"
+            version = "1.0.1"
             from(components["java"])
         }
     }
