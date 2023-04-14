@@ -10,7 +10,7 @@
       ],
       "orderEntries": [
         {
-          "name": "temurin-18",
+          "name": "temurin-17",
           "type": "SDK"
         },
         {
@@ -35,7 +35,7 @@
       ],
       "orderEntries": [
         {
-          "name": "temurin-18",
+          "name": "temurin-17",
           "type": "SDK"
         },
         {
@@ -84,7 +84,7 @@
       ],
       "orderEntries": [
         {
-          "name": "temurin-18",
+          "name": "temurin-17",
           "type": "SDK"
         },
         {

@@ -2,15 +2,15 @@
   "modules": [
     {
       "name": "Events",
-      "languageLevel": 18
+      "languageLevel": 17
     },
     {
       "name": "Events.test",
-      "languageLevel": 18
+      "languageLevel": 17
     },
     {
       "name": "Events.main",
-      "languageLevel": 18
+      "languageLevel": 17
     }
   ]
 }
