@@ -19,11 +19,6 @@ jobs:
           cache: gradle
       - name: Setup
         run: 'chmod +x ./gradlew'
-      - name: Download Assets
-        run: './gradlew downloadAssets'
-      - name: Generate Sources
-        run: './gradlew genSources'
-      - name: Dokka Build
         run: './gradlew dokkaHtml'
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
@@ -44,10 +39,6 @@ jobs:
           cache: gradle
       - name: Setup
         run: 'chmod +x ./gradlew'
-      - name: Download Assets
-        run: './gradlew downloadAssets'
-      - name: Generate Sources
-        run: './gradlew genSources'
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@main
         with:
