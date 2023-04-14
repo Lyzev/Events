@@ -1,0 +1,19 @@
+{
+  "total": 0,
+  "tools inspection": {
+    "Code Inspection": 0
+  },
+  "linter": "QDJVMC",
+  "attributes": {
+    "vcs": {
+      "sarifIdea": {
+        "repositoryUri": "https://github.com/Lyzev/Events.git",
+        "revisionId": "91742406755b12c48a0765682f7ec9b4ff314a95",
+        "branch": "master"
+      }
+    },
+    "deviceId": "200820300000000-98c0-5151-2672-3c5149d90a49",
+    "jobUrl": "https://github.com/Lyzev/Events/actions/runs/4702581629",
+    "repoUrl": "https://github.com/Lyzev/Events.git"
+  }
+}

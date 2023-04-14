@@ -1,0 +1,16 @@
+{
+  "modules": [
+    {
+      "name": "Events",
+      "languageLevel": 18
+    },
+    {
+      "name": "Events.test",
+      "languageLevel": 18
+    },
+    {
+      "name": "Events.main",
+      "languageLevel": 18
+    }
+  ]
+}
