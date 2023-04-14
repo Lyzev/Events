@@ -30,10 +30,10 @@ jobs:
         run: chmod +x ./gradlew
       - name: Generate Dokka documentation
         run: ./gradlew dokkaHTML
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy API documentation to Github Pages
+        if: ${{ github.ref == 'refs/heads/master' && github.event_name != 'pull_request' }}
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build/dokkaHtmlOutput
-          publish_branch: gh-pages
-          destination_dir: ./dokka
+          branch: gh-pages
+          folder: build/dokkaHtmlOutput
+          target-folder: dokka
