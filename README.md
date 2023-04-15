@@ -93,6 +93,8 @@ import dev.lyzev.api.events.on
 
 class TestEventListener : EventListener {
 
+    var handle = true
+
     init {
         on<TestEvent> { event ->
             if (event.a == 5)
@@ -101,7 +103,8 @@ class TestEventListener : EventListener {
         }
     }
 
-    override val shouldHandleEvents = true
+    override val shouldHandleEvents
+        get() = handle
 }
 ```
 
