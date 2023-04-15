@@ -8,12 +8,12 @@
     "vcs": {
       "sarifIdea": {
         "repositoryUri": "https://github.com/Lyzev/Events.git",
-        "revisionId": "d6050119dac9d5772eaf60090786cabf54475f41",
+        "revisionId": "06e8a68741e4e5828144aeff4985e1ad2ab41f35",
         "branch": "master"
       }
     },
     "deviceId": "200820300000000-98c0-5151-2672-3c5149d90a49",
-    "jobUrl": "https://github.com/Lyzev/Events/actions/runs/4702963522",
+    "jobUrl": "https://github.com/Lyzev/Events/actions/runs/4707828422",
     "repoUrl": "https://github.com/Lyzev/Events.git"
   }
 }
