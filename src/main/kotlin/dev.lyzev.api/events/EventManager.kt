@@ -45,7 +45,7 @@ object EventManager {
     operator fun <E : Event> invoke(event: E) {
         // Filter the listeners to only those interested in the given event or its superclass, sorted by priority
         for (listener in listeners.filter { (key, _) -> key == event::class || key.isSuperclassOf(event::class) }.values.flatten()
-            .filter { it.first.shouldHandleEvents() }.sortedBy { -it.second }.map { it.third }) {
+            .filter { it.first.shouldHandleEvents }.sortedBy { -it.second }.map { it.third }) {
             // Attempt to run the listener's handling function and catch any exceptions
             runCatching {
                 listener(event)
@@ -66,7 +66,9 @@ interface Event {
 }
 
 abstract class CancellableEvent : Event {
-    // Flag indicating whether this event has been cancelled or not
+    /**
+     * Flag indicating whether this event has been cancelled or not
+     */
     var isCancelled: Boolean = false
 
     override fun fire() {

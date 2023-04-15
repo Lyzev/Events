@@ -9,7 +9,7 @@ interface EventListener {
     /**
      * Determine whether this listener should handle events or not
      */
-    fun shouldHandleEvents(): Boolean
+    val shouldHandleEvents: Boolean
 }
 
 /**

@@ -18,5 +18,5 @@ class TestEventListener : EventListener {
         }
     }
 
-    override fun shouldHandleEvents(): Boolean = true
+    override val shouldHandleEvents = true
 }
