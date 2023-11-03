@@ -5,11 +5,11 @@
       "languageLevel": 17
     },
     {
-      "name": "Events.test",
+      "name": "Events.main",
       "languageLevel": 17
     },
     {
-      "name": "Events.main",
+      "name": "Events.test",
       "languageLevel": 17
     }
   ]
