@@ -64,6 +64,11 @@ interface Event {
      */
     fun fire() = EventManager(this)
 
+    /**
+     * The priority of an event listener
+     *
+     * @property value The value of the priority
+     */
     enum class Priority(val value: Int) {
         LOWEST(-2),
         LOW(-1),
