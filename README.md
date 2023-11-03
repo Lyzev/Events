@@ -88,6 +88,7 @@ dependencies {
         <summary>EventListener</summary>
 
 ```kt
+import dev.lyzev.api.events.Event
 import dev.lyzev.api.events.EventListener
 import dev.lyzev.api.events.on
 
@@ -96,7 +97,7 @@ class TestEventListener : EventListener {
     var handle = true
 
     init {
-        on<TestEvent> { event ->
+        on<TestEvent>(Event.Priority.HIGH) { event ->
             if (event.a == 5)
                 event.isCancelled = true
             println("TestEvent: ${event.a}")
@@ -114,6 +115,8 @@ class TestEventListener : EventListener {
         <summary>Event</summary>
 
 ```kt
+import dev.lyzev.api.events.CancellableEvent
+
 class TestEvent(val a: Int) : CancellableEvent()
 ```
 

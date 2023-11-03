@@ -1,13 +1,13 @@
 import org.jetbrains.dokka.gradle.DokkaTask
 
 plugins {
-    kotlin("jvm") version "1.8.0"
+    alias(libs.plugins.kotlin)
+    alias(libs.plugins.dokka)
     `maven-publish`
-    id("org.jetbrains.dokka") version "1.8.10"
 }
 
-group = "dev.lyzev.api"
-version = "1.0.2"
+group = project.extra["maven_group"] as String
+version = project.extra["maven_version"] as String
 
 repositories {
     mavenCentral()
@@ -19,7 +19,7 @@ dependencies {
 }
 
 kotlin {
-    jvmToolchain(17)
+    jvmToolchain((project.extra["java_version"] as String).toInt())
 }
 
 tasks.getByName<DokkaTask>("dokkaHtml") {
@@ -27,19 +27,19 @@ tasks.getByName<DokkaTask>("dokkaHtml") {
 }
 
 tasks.compileKotlin {
-    kotlinOptions.jvmTarget = "17"
+    kotlinOptions.jvmTarget = project.extra["java_version"] as String
 }
 
 tasks.compileTestKotlin {
-    kotlinOptions.jvmTarget = "17"
+    kotlinOptions.jvmTarget = project.extra["java_version"] as String
 }
 
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            groupId = "dev.lyzev.api"
-            artifactId = "events"
-            version = "1.0.2"
+            groupId = project.extra["maven_group"] as String
+            artifactId = project.extra["maven_artifact"] as String
+            version = project.extra["maven_version"] as String
             from(components["java"])
         }
     }

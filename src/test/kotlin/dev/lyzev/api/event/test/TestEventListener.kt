@@ -5,18 +5,22 @@
 
 package dev.lyzev.api.event.test
 
+import dev.lyzev.api.events.Event
 import dev.lyzev.api.events.EventListener
 import dev.lyzev.api.events.on
 
 class TestEventListener : EventListener {
 
+    var handle = true
+
     init {
-        on<TestEvent> { event ->
+        on<TestEvent>(Event.Priority.HIGH) { event ->
             if (event.a == 5)
                 event.isCancelled = true
             println("TestEvent: ${event.a}")
         }
     }
 
-    override val shouldHandleEvents = true
+    override val shouldHandleEvents
+        get() = handle
 }

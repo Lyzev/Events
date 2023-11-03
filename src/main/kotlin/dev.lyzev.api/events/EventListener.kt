@@ -18,5 +18,5 @@ interface EventListener {
  * @param priority The priority of the listener (higher priority listeners are executed first).
  * @param block The function to execute when the event is triggered.
  */
-inline fun <reified E : Event> EventListener.on(priority: Int = 0, noinline block: (E) -> Unit) =
+inline fun <reified E : Event> EventListener.on(priority: Event.Priority = Event.Priority.MID, noinline block: (E) -> Unit) =
     EventManager.on(this, priority, block)
