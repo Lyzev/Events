@@ -1,8 +1,10 @@
 [versions]
 kotlin = "1.9.20"
 dokka = "1.9.10"
+kotlin_reflect = "1.9.20"
 
 [libraries]
+kotlin_reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin_reflect" }
 
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }

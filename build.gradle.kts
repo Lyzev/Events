@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
     // https://kotlinlang.org/docs/reflection.html
-    compileOnly(kotlin("reflect"))
+    compileOnly(libs.kotlin.reflect)
 }
 
 kotlin {
