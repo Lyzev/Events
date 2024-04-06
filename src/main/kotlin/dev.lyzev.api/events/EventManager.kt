@@ -44,7 +44,7 @@ object EventManager {
      */
     operator fun <E : Event> invoke(event: E) {
         // Filter the listeners to only those interested in the given event or its superclass, sorted by priority
-        for (listener in listeners.filter { (key, _) -> key == event::class || key.isSuperclassOf(event::class) }.values.flatten()
+        for (listener in listeners.filter { (key, _) -> key == event::class }.values.flatten()
             .filter { it.first.shouldHandleEvents }.sortedBy { -it.second.value }.map { it.third }) {
             // Attempt to run the listener's handling function and catch any exceptions
             runCatching {
