@@ -1,4 +1,6 @@
 import org.jetbrains.dokka.gradle.DokkaTask
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     alias(libs.plugins.kotlin)
@@ -15,23 +17,35 @@ repositories {
 
 dependencies {
     // https://kotlinlang.org/docs/reflection.html
-    compileOnly(libs.kotlin.reflect)
+    implementation(libs.kotlin.reflect)
 }
 
 kotlin {
     jvmToolchain((project.extra["java_version"] as String).toInt())
 }
 
-tasks.getByName<DokkaTask>("dokkaHtml") {
-    outputDirectory.set(buildDir.resolve("dokkaHtmlOutput"))
+dokka {
+    moduleName.set("Events")
+    dokkaSourceSets.main {
+        includes.from("README.md")
+        sourceLink {
+            localDirectory.set(file("src/main/kotlin"))
+            remoteUrl("https://lyzev.dev/Events/dokka/")
+            remoteLineSuffix.set("#L")
+        }
+    }
+    pluginsConfiguration.html {
+        footerMessage.set("(c) Lyzev")
+    }
+    dokkaPublications.html {
+        outputDirectory.set(layout.buildDirectory.dir("dokkaHtmlOutput"))
+    }
 }
 
-tasks.compileKotlin {
-    kotlinOptions.jvmTarget = project.extra["java_version"] as String
-}
-
-tasks.compileTestKotlin {
-    kotlinOptions.jvmTarget = project.extra["java_version"] as String
+tasks.withType<KotlinCompile>().configureEach {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.fromTarget(project.extra["java_version"] as String))
+    }
 }
 
 publishing {

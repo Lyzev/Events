@@ -1,14 +1,15 @@
 .gradle
+.kotlin
+logs
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
 
 ### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
+.idea/*
+!.idea/copyright/*
+!.idea/icon.png
 *.iws
 *.iml
 *.ipr
@@ -40,3 +41,8 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Run ###
+/run/
+/.idea/runConfigurations/!/.idea/
+

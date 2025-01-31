@@ -1,14 +1,12 @@
 [versions]
-kotlin = "1.9.20"
-dokka = "1.9.10"
-kotlin_reflect = "1.9.20"
+kotlin = "2.0.0"
 
 [libraries]
-kotlin_reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin_reflect" }
+kotlin_reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
 
 [plugins]
 kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+dokka = { id = "org.jetbrains.dokka", version = "2.0.0" }
 
 [bundles]
 
