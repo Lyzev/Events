@@ -6,12 +6,23 @@ on:
     branches:
       - 'master'
     paths:
+      - '.github'
       - 'src'
   push:
     branches:
-      - 'master'
-    paths:
-      - 'src'
+      - '**'
+    paths-ignore:
+      - '.idea/**'
+      - .gitignore
+      - .gitattributes
+      - .editorconfig
+      - CODEOWNERS
+      - CHANGELOG.md
+      - CODE_OF_CONDUCT.md
+      - CONTRIBUTING.md
+      - SECURITY.md
+      - LICENSE
+      - README.md
 
 jobs:
   dokka:
