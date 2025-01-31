@@ -30,7 +30,7 @@ jobs:
   nightly:
     uses: ./.github/workflows/build.yml
     with:
-      build-command: publishMavenJavaPublicationToLocalRepository
+      build-command: publishMavenPublicationToMavenLocal
     permissions:
       packages: write
       contents: write
