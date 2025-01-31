@@ -24,6 +24,7 @@ plugins {
     alias(libs.plugins.kotlin)
     alias(libs.plugins.dokka)
     `maven-publish`
+    signing
 }
 
 group = project.extra["maven_group"] as String
@@ -67,6 +68,10 @@ tasks.withType<KotlinCompile>().configureEach {
     compilerOptions {
         jvmTarget.set(JvmTarget.fromTarget(project.extra["java_version"] as String))
     }
+}
+
+signing {
+    useGpgCmd()
 }
 
 publishing {

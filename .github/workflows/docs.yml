@@ -1,4 +1,4 @@
-name: Pipeline
+name: "Generate Dokka Documentation"
 
 on:
   workflow_dispatch:

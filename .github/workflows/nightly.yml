@@ -1,0 +1,17 @@
+name: "Nightly Build"
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+jobs:
+  nightly:
+    uses: ./.github/workflows/build.yml
+    with:
+      build-command: publishMavenJavaPublicationToLocalRepository
+    permissions:
+      packages: write
+      contents: write
+    secrets:
+      GPG_KEY: ${{ secrets.GPG_KEY }}
