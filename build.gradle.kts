@@ -53,7 +53,7 @@ dokka {
     dokkaSourceSets.main {
         sourceLink {
             localDirectory.set(file("src/main/kotlin"))
-            remoteUrl("https://schizoiddevelopment.github.io/piko/")
+            remoteUrl("https://github.com/SchizoidDevelopment/piko/blob/master")
             remoteLineSuffix.set("#L")
         }
     }
