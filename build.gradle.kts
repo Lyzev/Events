@@ -35,6 +35,11 @@ repositories {
 dependencies {
     // https://kotlinlang.org/docs/reflection.html
     implementation(libs.kotlin.reflect)
+    testImplementation(kotlin("test"))
+}
+
+tasks.test {
+    useJUnitPlatform()
 }
 
 kotlin {
