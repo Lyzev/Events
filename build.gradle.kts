@@ -71,14 +71,6 @@ tasks.withType<KotlinCompile>().configureEach {
 }
 
 publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = project.extra["maven_group"] as String
-            artifactId = project.extra["maven_artifact"] as String
-            version = project.extra["maven_version"] as String
-            from(components["java"])
-        }
-    }
     repositories {
         maven {
             name = "OSSRH"
@@ -86,6 +78,35 @@ publishing {
             credentials {
                 username = System.getenv("MAVEN_USERNAME")
                 password = System.getenv("MAVEN_PASSWORD")
+            }
+        }
+    }
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = project.extra["maven_group"] as String
+            artifactId = project.extra["maven_artifact"] as String
+            version = project.extra["maven_version"] as String
+            from(components["java"])
+            pom {
+                name = "Piko"
+                description = "Effortlessly manage events in your application with this lightweight and flexible event management library, designed to simplify the process of registering listeners and triggering events."
+                url = "https://github.com/SchizoidDevelopment/piko"
+                licenses {
+                    license {
+                        name = "GNU Affero General Public License v3.0"
+                        url = "https://github.com/SchizoidDevelopment/piko/blob/master/LICENSE"
+                    }
+                }
+                developers {
+                    developer {
+                        id = "Lyzev"
+                    }
+                }
+                scm {
+                    connection = "scm:git:git://github.com/SchizoidDevelopment/piko.git"
+                    developerConnection = "scm:git:ssh://github.com/SchizoidDevelopment/piko.git"
+                    url = "https://github.com/SchizoidDevelopment/piko.git"
+                }
             }
         }
     }
