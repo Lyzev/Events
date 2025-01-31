@@ -16,12 +16,12 @@
  * You should have received a copy of the GNU General Public License along with Piko. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package dev.lyzev.piko.test
+package dev.lyzev.api.event.test
 
 import dev.lyzev.api.event.*
-import dev.lyzev.piko.Event
-import dev.lyzev.piko.EventListener
-import dev.lyzev.piko.on
+import dev.lyzev.api.event.Event
+import dev.lyzev.api.event.EventListener
+import dev.lyzev.api.event.on
 import kotlin.test.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue

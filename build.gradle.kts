@@ -48,7 +48,7 @@ kotlin {
 }
 
 dokka {
-    moduleName.set("Events")
+    moduleName.set("Piko")
     dokkaSourceSets.main {
         sourceLink {
             localDirectory.set(file("src/main/kotlin"))

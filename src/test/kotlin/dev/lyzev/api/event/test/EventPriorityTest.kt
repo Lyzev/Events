@@ -16,30 +16,31 @@
  * You should have received a copy of the GNU General Public License along with Piko. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package dev.lyzev.piko.test
+package dev.lyzev.api.event.test
 
 import dev.lyzev.api.event.*
-import dev.lyzev.piko.CancellableEvent
-import dev.lyzev.piko.EventListener
-import dev.lyzev.piko.on
+import dev.lyzev.api.event.Event
+import dev.lyzev.api.event.EventListener
+import dev.lyzev.api.event.on
 import kotlin.test.Test
-import kotlin.test.assertFalse
-import kotlin.test.assertTrue
+import kotlin.test.assertEquals
 
-class EventListenerInheritanceTest {
+class EventPriorityTest {
 
     @Test
-    fun testParentEventListenerHandlesChildEvent() {
-        var parentEventHandled = false
-        var childEventHandled = false
+    fun testEventPriority() {
+        val eventOrder = mutableListOf<Event.Priority>()
 
         object : EventListener {
             init {
-                on<CancellableEvent> {
-                    parentEventHandled = true
+                on<TestEvent>(Event.Priority.LOW) {
+                    eventOrder.add(Event.Priority.LOW)
                 }
-                on<TestEvent> {
-                    childEventHandled = true
+                on<TestEvent>(Event.Priority.HIGH) {
+                    eventOrder.add(Event.Priority.HIGH)
+                }
+                on<TestEvent>(Event.Priority.MID) {
+                    eventOrder.add(Event.Priority.MID)
                 }
             }
 
@@ -47,9 +48,9 @@ class EventListenerInheritanceTest {
                 get() = true
         }
 
-        TestEvent(5).fire()
+        TestEvent(1).fire()
 
-        assertFalse(parentEventHandled, "Parent event listener should not handle child event")
-        assertTrue(childEventHandled, "Child event listener should handle child event")
+        println(eventOrder)
+        assertEquals(listOf(Event.Priority.HIGH, Event.Priority.MID, Event.Priority.LOW), eventOrder, "Event listeners should be called in priority order")
     }
 }

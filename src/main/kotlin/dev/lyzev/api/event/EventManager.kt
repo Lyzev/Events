@@ -16,7 +16,7 @@
  * You should have received a copy of the GNU General Public License along with Piko. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package dev.lyzev.piko
+package dev.lyzev.api.event
 
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.CopyOnWriteArrayList

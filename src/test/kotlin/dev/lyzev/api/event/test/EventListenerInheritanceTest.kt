@@ -16,31 +16,30 @@
  * You should have received a copy of the GNU General Public License along with Piko. If not, see <https://www.gnu.org/licenses/>.
  */
 
-package dev.lyzev.piko.test
+package dev.lyzev.api.event.test
 
 import dev.lyzev.api.event.*
-import dev.lyzev.piko.Event
-import dev.lyzev.piko.EventListener
-import dev.lyzev.piko.on
+import dev.lyzev.api.event.CancellableEvent
+import dev.lyzev.api.event.EventListener
+import dev.lyzev.api.event.on
 import kotlin.test.Test
-import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertTrue
 
-class EventPriorityTest {
+class EventListenerInheritanceTest {
 
     @Test
-    fun testEventPriority() {
-        val eventOrder = mutableListOf<Event.Priority>()
+    fun testParentEventListenerHandlesChildEvent() {
+        var parentEventHandled = false
+        var childEventHandled = false
 
         object : EventListener {
             init {
-                on<TestEvent>(Event.Priority.LOW) {
-                    eventOrder.add(Event.Priority.LOW)
+                on<CancellableEvent> {
+                    parentEventHandled = true
                 }
-                on<TestEvent>(Event.Priority.HIGH) {
-                    eventOrder.add(Event.Priority.HIGH)
-                }
-                on<TestEvent>(Event.Priority.MID) {
-                    eventOrder.add(Event.Priority.MID)
+                on<TestEvent> {
+                    childEventHandled = true
                 }
             }
 
@@ -48,9 +47,9 @@ class EventPriorityTest {
                 get() = true
         }
 
-        TestEvent(1).fire()
+        TestEvent(5).fire()
 
-        println(eventOrder)
-        assertEquals(listOf(Event.Priority.HIGH, Event.Priority.MID, Event.Priority.LOW), eventOrder, "Event listeners should be called in priority order")
+        assertFalse(parentEventHandled, "Parent event listener should not handle child event")
+        assertTrue(childEventHandled, "Child event listener should handle child event")
     }
 }
