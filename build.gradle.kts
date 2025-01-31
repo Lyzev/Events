@@ -27,7 +27,6 @@ kotlin {
 dokka {
     moduleName.set("Events")
     dokkaSourceSets.main {
-        includes.from("README.md")
         sourceLink {
             localDirectory.set(file("src/main/kotlin"))
             remoteUrl("https://lyzev.dev/Events/dokka/")
