@@ -1,20 +1,20 @@
-<h1 align="center">Events</h1>
+<h1 align="center">Piko</h1>
 
 <p align="center">Effortlessly manage events in your application with this lightweight and flexible event management library, designed to simplify the process of registering listeners and triggering events.</p>
 
 <div align="center">
     <a href="https://lyzev.github.io/discord"><img src="https://img.shields.io/discord/610120595765723137?logo=discord" alt="Discord"/></a>
     <br><br>
-    <img src="https://img.shields.io/github/last-commit/Lyzev/Events" alt="GitHub last commit"/>
-    <img src="https://img.shields.io/github/commit-activity/w/Lyzev/Events" alt="GitHub commit activity"/>
+    <img src="https://img.shields.io/github/last-commit/SchizoidDevelopment/piko" alt="GitHub last commit"/>
+    <img src="https://img.shields.io/github/commit-activity/w/SchizoidDevelopment/piko alt="GitHub commit activity"/>
     <br>
-    <img src="https://img.shields.io/github/languages/code-size/Lyzev/Events" alt="GitHub code size in bytes"/>
-    <img src="https://img.shields.io/github/contributors/Lyzev/Events" alt="GitHub contributors"/>
+    <img src="https://img.shields.io/github/languages/code-size/SchizoidDevelopment/piko" alt="GitHub code size in bytes"/>
+    <img src="https://img.shields.io/github/contributors/SchizoidDevelopment/piko" alt="GitHub contributors"/>
 </div>
 
 ## Usage
 
-[![](https://jitpack.io/v/Lyzev/Events.svg?label=Release)](https://jitpack.io/#Lyzev/Events)
+[![](https://jitpack.io/v/SchizoidDevelopment/piko.svg?label=Release)](https://jitpack.io/#SchizoidDevelopment/piko)
 
 ### Import
 
@@ -88,9 +88,9 @@ dependencies {
         <summary>EventListener</summary>
 
 ```kt
-import dev.lyzev.api.events.Event
-import dev.lyzev.api.events.EventListener
-import dev.lyzev.api.events.on
+import dev.lyzev.api.event.Event
+import dev.lyzev.api.event.EventListener
+import dev.lyzev.api.event.on
 
 class TestEventListener : EventListener {
 
@@ -115,7 +115,7 @@ class TestEventListener : EventListener {
         <summary>Event</summary>
 
 ```kt
-import dev.lyzev.api.events.CancellableEvent
+import dev.lyzev.api.event.CancellableEvent
 
 class TestEvent(val a: Int) : CancellableEvent()
 ```

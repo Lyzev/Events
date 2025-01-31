@@ -1,2 +1,2 @@
-rootProject.name = "Events"
+rootProject.name = "Piko"
 
