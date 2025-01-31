@@ -6,7 +6,7 @@
     <a href="https://lyzev.github.io/discord"><img src="https://img.shields.io/discord/610120595765723137?logo=discord" alt="Discord"/></a>
     <br><br>
     <img src="https://img.shields.io/github/last-commit/SchizoidDevelopment/piko" alt="GitHub last commit"/>
-    <img src="https://img.shields.io/github/commit-activity/w/SchizoidDevelopment/piko alt="GitHub commit activity"/>
+    <img src="https://img.shields.io/github/commit-activity/w/SchizoidDevelopment/piko" alt="GitHub commit activity"/>
     <br>
     <img src="https://img.shields.io/github/languages/code-size/SchizoidDevelopment/piko" alt="GitHub code size in bytes"/>
     <img src="https://img.shields.io/github/contributors/SchizoidDevelopment/piko" alt="GitHub contributors"/>
