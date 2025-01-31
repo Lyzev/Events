@@ -18,7 +18,6 @@
 
 package dev.lyzev.api.event.test
 
-import dev.lyzev.api.event.*
 import dev.lyzev.api.event.Event
 import dev.lyzev.api.event.EventListener
 import dev.lyzev.api.event.on
