@@ -1,0 +1,27 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:dev.lyzev.api.event////PointingToDeclaration/-piko/dev.lyzev.api.event/index.html
+$dokka.location:dev.lyzev.api.event//on/dev.lyzev.api.event.EventListener#dev.lyzev.api.event.Event.Priority#kotlin.Function1[TypeParam(bounds=[dev.lyzev.api.event.Event]),kotlin.Unit]/PointingToDeclaration/-piko/dev.lyzev.api.event/on.html
+$dokka.location:dev.lyzev.api.event/CancellableEvent///PointingToDeclaration/-piko/dev.lyzev.api.event/-cancellable-event/index.html
+$dokka.location:dev.lyzev.api.event/CancellableEvent/CancellableEvent/#/PointingToDeclaration/-piko/dev.lyzev.api.event/-cancellable-event/-cancellable-event.html
+$dokka.location:dev.lyzev.api.event/CancellableEvent/fire/#/PointingToDeclaration/-piko/dev.lyzev.api.event/-cancellable-event/fire.html
+$dokka.location:dev.lyzev.api.event/CancellableEvent/isCancelled/#/PointingToDeclaration/-piko/dev.lyzev.api.event/-cancellable-event/is-cancelled.html
+$dokka.location:dev.lyzev.api.event/Event.Priority.HIGH///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-piko/dev.lyzev.api.event/-event/-priority/-h-i-g-h/index.html
+$dokka.location:dev.lyzev.api.event/Event.Priority.HIGHEST///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-piko/dev.lyzev.api.event/-event/-priority/-h-i-g-h-e-s-t/index.html
+$dokka.location:dev.lyzev.api.event/Event.Priority.LOW///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-piko/dev.lyzev.api.event/-event/-priority/-l-o-w/index.html
+$dokka.location:dev.lyzev.api.event/Event.Priority.LOWEST///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-piko/dev.lyzev.api.event/-event/-priority/-l-o-w-e-s-t/index.html
+$dokka.location:dev.lyzev.api.event/Event.Priority.MID///PointingToDeclaration/{"org.jetbrains.dokka.links.EnumEntryDRIExtra":{"key":"org.jetbrains.dokka.links.EnumEntryDRIExtra"}}-piko/dev.lyzev.api.event/-event/-priority/-m-i-d/index.html
+$dokka.location:dev.lyzev.api.event/Event.Priority///PointingToDeclaration/-piko/dev.lyzev.api.event/-event/-priority/index.html
+$dokka.location:dev.lyzev.api.event/Event.Priority/entries/#/PointingToDeclaration/-piko/dev.lyzev.api.event/-event/-priority/entries.html
+$dokka.location:dev.lyzev.api.event/Event.Priority/value/#/PointingToDeclaration/-piko/dev.lyzev.api.event/-event/-priority/value.html
+$dokka.location:dev.lyzev.api.event/Event.Priority/valueOf/#kotlin.String/PointingToDeclaration/-piko/dev.lyzev.api.event/-event/-priority/value-of.html
+$dokka.location:dev.lyzev.api.event/Event.Priority/values/#/PointingToDeclaration/-piko/dev.lyzev.api.event/-event/-priority/values.html
+$dokka.location:dev.lyzev.api.event/Event///PointingToDeclaration/-piko/dev.lyzev.api.event/-event/index.html
+$dokka.location:dev.lyzev.api.event/Event/fire/#/PointingToDeclaration/-piko/dev.lyzev.api.event/-event/fire.html
+$dokka.location:dev.lyzev.api.event/EventListener///PointingToDeclaration/-piko/dev.lyzev.api.event/-event-listener/index.html
+$dokka.location:dev.lyzev.api.event/EventListener/shouldHandleEvents/#/PointingToDeclaration/-piko/dev.lyzev.api.event/-event-listener/should-handle-events.html
+$dokka.location:dev.lyzev.api.event/EventManager///PointingToDeclaration/-piko/dev.lyzev.api.event/-event-manager/index.html
+$dokka.location:dev.lyzev.api.event/EventManager/invoke/#TypeParam(bounds=[dev.lyzev.api.event.Event])/PointingToDeclaration/-piko/dev.lyzev.api.event/-event-manager/invoke.html
+$dokka.location:dev.lyzev.api.event/EventManager/on/#dev.lyzev.api.event.EventListener#dev.lyzev.api.event.Event.Priority#kotlin.Function1[TypeParam(bounds=[dev.lyzev.api.event.Event]),kotlin.Unit]/PointingToDeclaration/-piko/dev.lyzev.api.event/-event-manager/on.html
+$dokka.location:dev.lyzev.api.event/EventManager/on/#dev.lyzev.api.event.EventListener#kotlin.reflect.KClass[*]#dev.lyzev.api.event.Event.Priority#kotlin.Function1[dev.lyzev.api.event.Event,kotlin.Unit]/PointingToDeclaration/-piko/dev.lyzev.api.event/-event-manager/on.html
+dev.lyzev.api.event
