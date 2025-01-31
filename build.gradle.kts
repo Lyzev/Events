@@ -18,6 +18,7 @@
 
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import java.net.URI
 
 plugins {
     alias(libs.plugins.kotlin)
@@ -76,6 +77,16 @@ publishing {
             artifactId = project.extra["maven_artifact"] as String
             version = project.extra["maven_version"] as String
             from(components["java"])
+        }
+    }
+    repositories {
+        maven {
+            name = "OSSRH"
+            url = URI("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
+            credentials {
+                username = System.getenv("MAVEN_USERNAME")
+                password = System.getenv("MAVEN_PASSWORD")
+            }
         }
     }
 }
