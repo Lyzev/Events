@@ -21,15 +21,21 @@ package dev.lyzev.api.event.test
 import dev.lyzev.api.event.Event
 import dev.lyzev.api.event.EventListener
 import dev.lyzev.api.event.on
+import org.junit.jupiter.api.BeforeEach
 import kotlin.test.Test
 import kotlin.test.assertEquals
 
 class EventPriorityTest {
 
+    private val eventOrder = mutableListOf<Event.Priority>()
+
+    @BeforeEach
+    fun setUp() {
+        eventOrder.clear()
+    }
+
     @Test
     fun testEventPriority() {
-        val eventOrder = mutableListOf<Event.Priority>()
-
         object : EventListener {
             init {
                 on<TestEvent>(Event.Priority.LOW) {
