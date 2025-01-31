@@ -6,7 +6,7 @@ jobs:
   staging:
     uses: ./.github/workflows/build.yml
     with:
-      build-command: publishMavenJavaPublicationToOSSRHRepository
+      build-command: publishMavenPublicationToOSSRHRepository
     permissions:
       packages: write
       contents: write
