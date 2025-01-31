@@ -18,6 +18,8 @@
 
 package dev.lyzev.api.events
 
+import java.util.concurrent.ConcurrentHashMap
+import java.util.concurrent.CopyOnWriteArrayList
 import kotlin.reflect.KClass
 import kotlin.reflect.full.isSuperclassOf
 
@@ -26,7 +28,7 @@ object EventManager {
     /**
      * Create a map of event classes to a list of event listeners, their priority and their handling function
      */
-    private val listeners = mutableMapOf<KClass<*>, MutableList<Triple<EventListener, Event.Priority, (Event) -> Unit>>>()
+    private val listeners = ConcurrentHashMap<KClass<*>, CopyOnWriteArrayList<Triple<EventListener, Event.Priority, (Event) -> Unit>>>()
 
     /**
      * Registers an event listener for the specified event class.
@@ -36,8 +38,13 @@ object EventManager {
      * @param priority The priority of the listener (higher priority listeners are executed first).
      * @param block The function to execute when the event is triggered.
      */
-    fun on(eventListener: EventListener, clazz: KClass<*>, priority: Event.Priority, block: (Event) -> Unit) =
-        listeners.getOrPut(clazz) { mutableListOf() }.add(Triple(eventListener, priority, block))
+    fun on(eventListener: EventListener, clazz: KClass<*>, priority: Event.Priority, block: (Event) -> Unit) {
+        val newListener = Triple(eventListener, priority, block)
+        listeners.getOrPut(clazz) { CopyOnWriteArrayList() }.apply {
+            add(newListener)
+            sortByDescending { it.second.value }
+        }
+    }
 
     /**
      * Register an event listener for a specific type of event with a given priority and handling function, using reified type parameter
@@ -56,17 +63,11 @@ object EventManager {
      * @param event The event to trigger.
      */
     operator fun <E : Event> invoke(event: E) {
-        // Filter the listeners to only those interested in the given event or its superclass, sorted by priority
-        for (listener in listeners.filter { (key, _) -> key == event::class }.values.flatten()
-            .filter { it.first.shouldHandleEvents }.sortedBy { -it.second.value }.map { it.third }) {
-            // Attempt to run the listener's handling function and catch any exceptions
-            runCatching {
-                listener(event)
-            }.onFailure {
-                it.printStackTrace()
+        listeners[event::class]?.forEach { (listener, _, block) ->
+            if (listener.shouldHandleEvents) {
+                runCatching { block(event) }.onFailure { it.printStackTrace() }
+                if (event is CancellableEvent && event.isCancelled) return
             }
-            // If the event is cancellable and has been cancelled, stop processing further listeners
-            if (event is CancellableEvent && event.isCancelled) break
         }
     }
 }
