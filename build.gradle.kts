@@ -113,6 +113,7 @@ publishing {
                     url = "https://github.com/SchizoidDevelopment/piko.git"
                 }
             }
+            the<SigningExtension>().sign(this)
         }
     }
 }
