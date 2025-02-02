@@ -125,11 +125,11 @@ You can find the documentation [here](https://schizoiddevelopment.github.io/piko
 ### Discord
 
 For assistance with minor concerns, feel free to join our supportive community on
-the [Discord server](https://lyzev.github.io/discord). Our friendly members and staff are ready to help you.
+the [Discord server](https://lyzev.dev/discord). Our friendly members and staff are ready to help you.
 
 ### GitHub
 
 To ensure a prompt and effective resolution of bugs or to share your suggestions, please submit them through
-the [issue tracker](https://github.com/Lyzev/Events/issues) of this repository. Kindly utilize the provided templates
+the [issue tracker](https://github.com/SchizoidDevelopment/piko/issues) of this repository. Kindly utilize the provided templates
 and make sure to include all relevant details that would help us understand your issue better. Your cooperation is
 greatly appreciated.
