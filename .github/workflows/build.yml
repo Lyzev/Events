@@ -9,15 +9,13 @@ on:
     secrets:
       GPG_KEY:
         required: true
-      MAVEN_USERNAME:
-      MAVEN_PASSWORD:
+      MAVEN_USER_TOKEN:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      MAVEN_USERNAME: ${{ secrets.MAVEN_USERNAME }}
-      MAVEN_PASSWORD: ${{ secrets.MAVEN_PASSWORD }}
+      MAVEN_USER_TOKEN: ${{ secrets.MAVEN_USER_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - name: Import GPG key

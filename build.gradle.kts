@@ -35,7 +35,6 @@ repositories {
 }
 
 dependencies {
-    implementation(libs.kotlin.reflect)
     testImplementation(kotlin("test"))
 }
 
@@ -46,6 +45,16 @@ tasks.test {
 
 kotlin {
     jvmToolchain((project.extra["java_version"] as String).toInt())
+}
+
+val sourcesJar by tasks.registering(Jar::class) {
+    archiveClassifier.set("sources")
+    from(sourceSets.main.get().allSource)
+}
+
+val javadocJar by tasks.registering(Jar::class) {
+    archiveClassifier.set("javadoc")
+    from(tasks.javadoc)
 }
 
 dokka {
@@ -71,6 +80,19 @@ tasks.withType<KotlinCompile>().configureEach {
     }
 }
 
+tasks.register("publishToMavenCentral") {
+    dependsOn("publishMavenPublicationToLocalRepository")
+
+    doLast {
+        exec {
+            commandLine("sh", "-c", "cd build/repo && zip -r ../../build.zip ./*")
+        }
+        exec {
+            commandLine("sh", "-c", "curl --request POST --verbose --header 'Authorization: Bearer ${System.getenv("MAVEN_USER_TOKEN")}' --form bundle=@build.zip https://central.sonatype.com/api/v1/publisher/upload")
+        }
+    }
+}
+
 signing {
     useGpgCmd()
 }
@@ -78,12 +100,8 @@ signing {
 publishing {
     repositories {
         maven {
-            name = "OSSRH"
-            url = URI("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
-            credentials {
-                username = System.getenv("MAVEN_USERNAME")
-                password = System.getenv("MAVEN_PASSWORD")
-            }
+            name = "Local"
+            url = URI("file://${project.layout.buildDirectory.get()}/repo")
         }
     }
     publications {
@@ -92,6 +110,8 @@ publishing {
             artifactId = project.extra["maven_artifact"] as String
             version = project.extra["maven_version"] as String
             from(components["java"])
+            artifact(sourcesJar.get())
+            artifact(javadocJar.get())
             pom {
                 name = "Piko"
                 description = "Effortlessly manage events in your application with this lightweight and flexible event management library, designed to simplify the process of registering listeners and triggering events."
