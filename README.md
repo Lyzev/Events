@@ -14,7 +14,9 @@
 
 ## Usage
 
-[![](https://jitpack.io/v/SchizoidDevelopment/piko.svg?label=Release)](https://jitpack.io/#SchizoidDevelopment/piko)
+## Usage
+
+[![Maven Central Version](https://img.shields.io/maven-central/v/dev.lyzev.api/piko)](https://central.sonatype.com/artifact/dev.lyzev.api/piko)
 
 ### Import
 
@@ -25,11 +27,11 @@ Replace `${version}` with the current version!
 
 ```kt
 repositories {
-    maven("https://jitpack.io")
+    mavenCentral()
 }
 
 dependencies {
-    implementation("com.github.Lyzev:Events:${version}")
+    implementation("dev.lyzev.api", "piko", "${version}")
 }
 ```
 
@@ -40,11 +42,11 @@ dependencies {
 
 ```groovy
 repositories {
-    maven { url 'https://jitpack.io' }
+    mavenCentral()
 }
 
 dependencies {
-    implementation 'com.github.Lyzev:Events:${version}'
+    implementation 'dev.lyzev.api:piko:${version}'
 }
 ```
 
@@ -54,20 +56,12 @@ dependencies {
         <summary>Maven</summary>
 
 ```xml
-
-<repositories>
-    <repository>
-        <id>jitpack.io</id>
-        <url>https://jitpack.io</url>
-    </repository>
-</repositories>
-
 <dependencies>
-    <dependency>
-        <groupId>com.github.Lyzev</groupId>
-        <artifactId>Events</artifactId>
-        <version>${version}</version>
-    </dependency>
+<dependency>
+    <groupId>dev.lyzev.api</groupId>
+    <artifactId>piko</artifactId>
+    <version>${version}</version>
+</dependency>
 </dependencies>
 ```
 
@@ -76,9 +70,9 @@ dependencies {
 <details>
         <summary>Raw Jar</summary>
 
-1. Go to the [release page](https://github.com/Lyzev/Events/releases).
-2. Download Events-${version}.jar.
-3. Add the jar to your classpath.
+1. Go to the [Maven Central Repository](https://search.maven.org/artifact/dev.lyzev.api/piko) and download the JAR file from the version you want.
+2. Add the JAR file to your project.
+3. Done!
 
 </details>
 
@@ -124,11 +118,7 @@ class TestEvent(val a: Int) : CancellableEvent()
 
 ## Documentation
 
-You can find the documentation [here](https://lyzev.github.io/Events/dokka).
-
-## Code Quality Monitoring
-
-You can find the qodana report [here](https://lyzev.github.io/Events/qodana).
+You can find the documentation [here](https://schizoiddevelopment.github.io/piko/).
 
 ## Bugs and Suggestions
 
