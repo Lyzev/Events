@@ -1,18 +1,32 @@
-<h1 align="center">Piko</h1>
-
-<p align="center">Effortlessly manage events in your application with this lightweight and flexible event management library, designed to simplify the process of registering listeners and triggering events.</p>
-
 <div align="center">
-    <a href="https://lyzev.github.io/discord"><img src="https://img.shields.io/discord/610120595765723137?logo=discord" alt="Discord"/></a>
-    <br><br>
-    <img src="https://img.shields.io/github/last-commit/SchizoidDevelopment/piko" alt="GitHub last commit"/>
-    <img src="https://img.shields.io/github/commit-activity/w/SchizoidDevelopment/piko" alt="GitHub commit activity"/>
+    <img height="400" src=".idea/icon.png" alt="Icon of Piko">
     <br>
-    <img src="https://img.shields.io/github/languages/code-size/SchizoidDevelopment/piko" alt="GitHub code size in bytes"/>
-    <img src="https://img.shields.io/github/contributors/SchizoidDevelopment/piko" alt="GitHub contributors"/>
+    <a href="https://github.com/SchizoidDevelopment/piko">
+        <img src="https://wsrv.nl/?url=https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3.2.0/assets/cozy-minimal/available/github_vector.svg&w=100&h=100" alt="GitHub Repository">
+    </a>
+    <a href="https://central.sonatype.com/artifact/dev.lyzev.api/piko">
+        <img src="https://wsrv.nl/?url=https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3.2.0/assets/cozy-minimal/available/maven-central_vector.svg&w=100&h=100" alt="Maven Central">
+    </a>
+    <a href="https://lyzev.dev/discord">
+        <img src="https://wsrv.nl/?url=https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy-minimal/social/discord-plural_vector.svg&w=100&h=100" alt="Discord">
+    </a>
+    <a href="https://schizoiddevelopment.github.io/piko/">
+        <img src="https://wsrv.nl/?url=https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy-minimal/documentation/ghpages_vector.svg&w=100&h=100" alt="Documentation">
+    </a>
+    <a href="https://github.com/SchizoidDevelopment/piko/pulls">
+        <img src="https://wsrv.nl/?url=https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3.2.0/assets/cozy-minimal/documentation/pull-requests_vector.svg&w=100&h=100" alt="Pull Requests">
+    </a>
+    <a href="https://github.com/SchizoidDevelopment/piko/issues">
+        <img src="https://wsrv.nl/?url=https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3.2.0/assets/cozy-minimal/documentation/issues_vector.svg&w=100&h=100" alt="Issues">
+    </a>
 </div>
 
-## Usage
+# Piko: Event Management for Kotlin
+
+Effortlessly manage events in your Kotlin-based application with Piko, a lightweight and flexible event management library. Simplify the process of registering listeners and triggering events with ease.
+
+> **Tip:**  
+> Piko is specifically designed for Kotlin and works best when used with Kotlin’s coding style. It’s strongly recommended to use it exclusively with Kotlin.
 
 ## Usage
 
@@ -20,10 +34,10 @@
 
 ### Import
 
-Replace `${version}` with the current version!
+Make sure to replace `${version}` with the latest version of Piko!
 
 <details>
-        <summary>Gradle KTS</summary>
+    <summary>Gradle (KTS)</summary>
 
 ```kt
 repositories {
@@ -38,7 +52,7 @@ dependencies {
 </details>
 
 <details>
-        <summary>Gradle Groovy</summary>
+    <summary>Gradle (Groovy)</summary>
 
 ```groovy
 repositories {
@@ -53,33 +67,33 @@ dependencies {
 </details>
 
 <details>
-        <summary>Maven</summary>
+    <summary>Maven</summary>
 
 ```xml
 <dependencies>
-<dependency>
-    <groupId>dev.lyzev.api</groupId>
-    <artifactId>piko</artifactId>
-    <version>${version}</version>
-</dependency>
+    <dependency>
+        <groupId>dev.lyzev.api</groupId>
+        <artifactId>piko</artifactId>
+        <version>${version}</version>
+    </dependency>
 </dependencies>
 ```
 
 </details>
 
 <details>
-        <summary>Raw Jar</summary>
+    <summary>Raw Jar</summary>
 
-1. Go to the [Maven Central Repository](https://search.maven.org/artifact/dev.lyzev.api/piko) and download the JAR file from the version you want.
-2. Add the JAR file to your project.
-3. Done!
+1. Visit the [Maven Central Repository](https://search.maven.org/artifact/dev.lyzev.api/piko) and download the JAR file for the version you need.
+2. Add the downloaded JAR to your project.
+3. You're good to go!
 
 </details>
 
-### Example
+### Example Usage
 
 <details>
-        <summary>EventListener</summary>
+    <summary>EventListener</summary>
 
 ```kt
 import dev.lyzev.api.event.Event
@@ -106,7 +120,7 @@ class TestEventListener : EventListener {
 </details>
 
 <details>
-        <summary>Event</summary>
+    <summary>Event</summary>
 
 ```kt
 import dev.lyzev.api.event.CancellableEvent
@@ -118,18 +132,17 @@ class TestEvent(val a: Int) : CancellableEvent()
 
 ## Documentation
 
-You can find the documentation [here](https://schizoiddevelopment.github.io/piko/).
+For detailed documentation, check out the full [Piko Documentation](https://schizoiddevelopment.github.io/piko/).
 
 ## Bugs and Suggestions
 
-### Discord
+### Discord Community
 
-For assistance with minor concerns, feel free to join our supportive community on
-the [Discord server](https://lyzev.dev/discord). Our friendly members and staff are ready to help you.
+Need assistance or have minor questions? Join our welcoming community on the [Discord server](https://lyzev.dev/discord). Our members and staff are always ready to help!
 
-### GitHub
+### GitHub Issues
 
-To ensure a prompt and effective resolution of bugs or to share your suggestions, please submit them through
-the [issue tracker](https://github.com/SchizoidDevelopment/piko/issues) of this repository. Kindly utilize the provided templates
-and make sure to include all relevant details that would help us understand your issue better. Your cooperation is
-greatly appreciated.
+For bugs or suggestions, please submit them via the [GitHub Issue Tracker](https://github.com/SchizoidDevelopment/piko/issues). Be sure to use the provided templates and include all relevant details to help us understand your issue and resolve it swiftly. Your cooperation is greatly appreciated!
+
+---
+*Piko is developed and maintained by Schizoid Development. Thank you for using Piko!*
