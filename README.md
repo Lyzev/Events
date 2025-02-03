@@ -146,5 +146,9 @@ Need assistance or have minor questions? Join our welcoming community on the [Di
 
 For bugs or suggestions, please submit them via the [GitHub Issue Tracker](https://github.com/SchizoidDevelopment/piko/issues). Be sure to use the provided templates and include all relevant details to help us understand your issue and resolve it swiftly. Your cooperation is greatly appreciated!
 
+## Contribution Guidelines
+
+We welcome contributions from the community! Please read our [Contribution Guidelines](CONTRIBUTING.md) to get started.
+
 ---
 *Piko is developed and maintained by Schizoid Development. Thank you for using Piko!*
