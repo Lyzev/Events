@@ -25,7 +25,7 @@
 
 Effortlessly manage events in your Kotlin-based application with Piko, a lightweight and flexible event management library. Simplify the process of registering listeners and triggering events with ease.
 
-> **Tip:**  
+> [!TIP] 
 > Piko is specifically designed for Kotlin and works best when used with Kotlin’s coding style. It’s strongly recommended to use it exclusively with Kotlin.
 
 ## Usage
