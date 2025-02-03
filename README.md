@@ -1,5 +1,5 @@
 <div align="center">
-    <img height="400" src=".idea/icon.png" alt="Icon of Piko">
+    <img width="600" src=".idea/icon.png" alt="Icon of Piko">
     <br>
     <a href="https://github.com/SchizoidDevelopment/piko">
         <img src="https://wsrv.nl/?url=https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3.2.0/assets/cozy-minimal/available/github_vector.svg&w=100&h=100" alt="GitHub Repository">
