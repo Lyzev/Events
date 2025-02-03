@@ -140,6 +140,8 @@ For detailed documentation, check out the full [Piko Documentation](https://schi
 
 Need assistance or have minor questions? Join our welcoming community on the [Discord server](https://lyzev.dev/discord). Our members and staff are always ready to help!
 
+[![Discord Server](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/discord-plural_vector.svg)](https://lyzev.dev/discord)
+
 ### GitHub Issues
 
 For bugs or suggestions, please submit them via the [GitHub Issue Tracker](https://github.com/SchizoidDevelopment/piko/issues). Be sure to use the provided templates and include all relevant details to help us understand your issue and resolve it swiftly. Your cooperation is greatly appreciated!
