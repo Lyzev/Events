@@ -28,6 +28,12 @@ If you are interested in contributing code to the project, here are a few things
 - Before submitting a pull request, make sure that your code has been tested thoroughly and does not cause any issues
   with the existing code.
 
+### License and Copyright
+
+By contributing to this project, you agree that your contributions will be licensed under the GNU Affero General Public License v3.0 (AGPL-3.0). This ensures that the project remains free and open-source, and that any derivative works are also shared under the same license. Additionally, you confirm that the code you commit is your own work or you have the right to submit it.
+
+For more details, please refer to the [AGPL-3.0 license](https://www.gnu.org/licenses/agpl-3.0.en.html).
+
 ## Style Guide
 
 When contributing code, please follow the project's coding style and conventions. This includes:
