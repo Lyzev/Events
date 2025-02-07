@@ -22,6 +22,8 @@ released.
 
 We take all reports of security vulnerabilities very seriously and appreciate your help in keeping our project secure.
 
+[![Discord Server](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/discord-plural_vector.svg)](https://lyzev.dev/discord)
+
 ## Disclaimer of Warranty
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
