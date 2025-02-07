@@ -1,4 +1,4 @@
-# Contributing to Events
+# Contributing to Piko
 
 Thank you for considering contributing to this event library! Your contributions will help to make
 it even better.
