@@ -57,3 +57,5 @@ contributors with respect and refraining from any form of harassment or discrimi
 
 If you have any questions or need help getting started, please feel free to reach out by creating an issue on the
 project's GitHub repository. We would be happy to help!
+
+[![Discord Server](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/discord-plural_vector.svg)](https://lyzev.dev/discord)
