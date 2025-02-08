@@ -108,6 +108,7 @@
   <div class="breadcrumbs"><a href="../../index.html">Piko</a><span class="delimiter">/</span><span class="current">dev.lyzev.api.event</span></div>
   <div class="cover ">
     <h1 class="cover"><span><span>Package-level</span></span> <span><span>declarations</span></span></h1>
+    <div class="platform-hinted UnderCoverText" data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><p class="paragraph">The <code class="lang-kotlin">dev.lyzev.api.event</code> package is a core component of the Piko event management library. It provides the necessary interfaces and classes to create, register, and manage events and event listeners.</p><h2 class="">Usage Example</h2><h3 class="">Creating an Event</h3><p class="paragraph">To create a custom event, extend the <code class="lang-kotlin">CancellableEvent</code> class (or <code class="lang-kotlin">Event</code> if it doesn't need to be cancellable).</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">class TestEvent(val a: Int) : CancellableEvent()</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class="">Implementing an Event Listener</h3><p class="paragraph">Implement the <code class="lang-kotlin">EventListener</code> interface and register event handlers using the <code class="lang-kotlin">on</code> function.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">class TestEventListener : EventListener {<br>    var handle = true<br><br>    init {<br>        on&lt;TestEvent&gt;(Event.Priority.HIGH) { event -&gt;<br>            if (event.a == 5)<br>                event.isCancelled = true<br>            println(&quot;TestEvent: ${event.a}&quot;)<br>        }<br>    }<br><br>    override val shouldHandleEvents<br>        get() = handle<br>}</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><h3 class="">Triggering an Event</h3><p class="paragraph">Create an instance of the event and call the <code class="lang-kotlin">fire</code> method to trigger it.</p><div class="sample-container"><pre><code class="block lang-kotlin" theme="idea">val event = TestEvent(5)<br>event.fire()</code></pre><span class="top-right-position"><span class="copy-icon"></span><div class="copy-popup-wrapper popup-to-left"><span class="copy-popup-icon"></span><span>Content copied to clipboard</span></div></span></div><p class="paragraph">This will execute all registered listeners for the <code class="lang-kotlin">TestEvent</code> class, respecting their priority and cancellation status.</p></div></div>
   </div>
   <div class="tabbedcontent">
     <div class="tabs-section" tabs-section="tabs-section"><button class="section-tab" data-active="" data-togglable="TYPE">Types</button><button class="section-tab" data-togglable="FUNCTION,EXTENSION_FUNCTION">Functions</button></div>
@@ -124,7 +125,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-cancellable-event/index.html">CancellableEvent</a> : <a href="-event/index.html">Event</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">abstract </span><span class="token keyword">class </span><a href="-cancellable-event/index.html">CancellableEvent</a> : <a href="-event/index.html">Event</a></div><div class="brief "><p class="paragraph">An event that can be cancelled</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -139,7 +140,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-event/index.html">Event</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-event/index.html">Event</a></div><div class="brief "><p class="paragraph">Interface for events. Instances of this interface can be triggered by invoking the <a href="-event/fire.html">fire</a> function.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -154,7 +155,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-event-listener/index.html">EventListener</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">interface </span><a href="-event-listener/index.html">EventListener</a></div><div class="brief "><p class="paragraph">Interface for event listeners. Implementations can register event handlers using the <a href="on.html">on</a> function.</p></div></div></div>
                 </div>
               </div>
             </div>
@@ -169,7 +170,7 @@
                   </span></span></div>
               <div>
                 <div class="title">
-                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">object </span><a href="-event-manager/index.html">EventManager</a></div></div></div>
+                  <div class="platform-hinted " data-platform-hinted="data-platform-hinted"><div class="content sourceset-dependent-content" data-active="" data-togglable=":/main"><div class="symbol monospace"><span class="token keyword">object </span><a href="-event-manager/index.html">EventManager</a></div><div class="brief "><p class="paragraph">The event manager is responsible for registering and triggering events. It allows for event listeners to be registered for specific event classes. When an event is triggered, all registered listeners for the event class are executed. Event listeners are executed in order of their priority, with higher priority listeners</p></div></div></div>
                 </div>
               </div>
             </div>
