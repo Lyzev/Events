@@ -18,6 +18,10 @@
 
 package dev.lyzev.api.event
 
+/**
+ * Interface for event listeners.
+ * Implementations can register event handlers using the [on] function.
+ */
 interface EventListener {
     /**
      * Determine whether this listener should handle events or not
@@ -31,5 +35,7 @@ interface EventListener {
  * @param priority The priority of the listener (higher priority listeners are executed first).
  * @param block The function to execute when the event is triggered.
  */
-inline fun <reified E : Event> EventListener.on(priority: Event.Priority = Event.Priority.MID, noinline block: (E) -> Unit) =
-    EventManager.on(this, priority, block)
+inline fun <reified E : Event> EventListener.on(
+    priority: Event.Priority = Event.Priority.MID,
+    noinline block: (E) -> Unit
+) = EventManager.on(this, priority, block)

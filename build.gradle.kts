@@ -58,19 +58,20 @@ val javadocJar by tasks.registering(Jar::class) {
 }
 
 dokka {
-    moduleName.set("Piko")
+    moduleName = "Piko"
     dokkaSourceSets.main {
+        includes.from("MODULE.md")
         sourceLink {
-            localDirectory.set(file("src/main/kotlin"))
+            localDirectory = file("src/main/kotlin")
             remoteUrl("https://github.com/SchizoidDevelopment/piko/tree/master/src/main/kotlin")
-            remoteLineSuffix.set("#L")
+            remoteLineSuffix = "#L"
         }
     }
     pluginsConfiguration.html {
-        footerMessage.set("Copyright (c) 2023-2025. Lyzev")
+        footerMessage = "Copyright (c) 2023-2025. Lyzev"
     }
     dokkaPublications.html {
-        outputDirectory.set(layout.buildDirectory.dir("dokkaHtmlOutput"))
+        outputDirectory = layout.buildDirectory.dir("dokkaHtmlOutput")
     }
 }
 
@@ -88,7 +89,11 @@ tasks.register("publishToMavenCentral") {
             commandLine("sh", "-c", "cd build/repo && zip -r ../../build.zip ./*")
         }
         exec {
-            commandLine("sh", "-c", "curl --request POST --verbose --header 'Authorization: Bearer ${System.getenv("MAVEN_USER_TOKEN")}' --form bundle=@build.zip https://central.sonatype.com/api/v1/publisher/upload")
+            commandLine(
+                "sh",
+                "-c",
+                "curl --request POST --verbose --header 'Authorization: Bearer ${System.getenv("MAVEN_USER_TOKEN")}' --form bundle=@build.zip https://central.sonatype.com/api/v1/publisher/upload"
+            )
         }
     }
 }
@@ -114,7 +119,8 @@ publishing {
             artifact(javadocJar.get())
             pom {
                 name = "Piko"
-                description = "Effortlessly manage events in your application with this lightweight and flexible event management library, designed to simplify the process of registering listeners and triggering events."
+                description =
+                    "Effortlessly manage events in your application with this lightweight and flexible event management library, designed to simplify the process of registering listeners and triggering events."
                 url = "https://github.com/SchizoidDevelopment/piko"
                 licenses {
                     license {

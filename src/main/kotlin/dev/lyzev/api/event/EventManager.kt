@@ -22,12 +22,19 @@ import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.CopyOnWriteArrayList
 import kotlin.reflect.KClass
 
+/**
+ * The event manager is responsible for registering and triggering events.
+ * It allows for event listeners to be registered for specific event classes.
+ * When an event is triggered, all registered listeners for the event class are executed.
+ * Event listeners are executed in order of their priority, with higher priority listeners
+ */
 object EventManager {
 
     /**
      * Create a map of event classes to a list of event listeners, their priority and their handling function
      */
-    private val listeners = ConcurrentHashMap<KClass<*>, CopyOnWriteArrayList<Triple<EventListener, Event.Priority, (Event) -> Unit>>>()
+    private val listeners =
+        ConcurrentHashMap<KClass<*>, CopyOnWriteArrayList<Triple<EventListener, Event.Priority, (Event) -> Unit>>>()
 
     /**
      * Registers an event listener for the specified event class.
@@ -53,8 +60,11 @@ object EventManager {
      * @param block The handling function for this listener
      */
     @Suppress("UNCHECKED_CAST")
-    inline fun <reified E : Event> on(eventListener: EventListener, priority: Event.Priority, noinline block: (E) -> Unit) =
-        on(eventListener, E::class, priority, block as (Event) -> Unit)
+    inline fun <reified E : Event> on(
+        eventListener: EventListener,
+        priority: Event.Priority,
+        noinline block: (E) -> Unit
+    ) = on(eventListener, E::class, priority, block as (Event) -> Unit)
 
     /**
      * Triggers an event, executing all registered event listeners for the event class or its superclasses.
@@ -71,6 +81,10 @@ object EventManager {
     }
 }
 
+/**
+ * Interface for events.
+ * Instances of this interface can be triggered by invoking the [fire] function.
+ */
 interface Event {
     /**
      * Trigger this event by invoking the EventManager with this instance
@@ -91,6 +105,9 @@ interface Event {
     }
 }
 
+/**
+ * An event that can be cancelled
+ */
 abstract class CancellableEvent : Event {
     /**
      * Flag indicating whether this event has been cancelled or not

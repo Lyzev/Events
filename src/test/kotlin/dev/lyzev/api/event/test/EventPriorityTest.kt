@@ -56,6 +56,10 @@ class EventPriorityTest {
         TestEvent(1).fire()
 
         println(eventOrder)
-        assertEquals(listOf(Event.Priority.HIGH, Event.Priority.MID, Event.Priority.LOW), eventOrder, "Event listeners should be called in priority order")
+        assertEquals(
+            listOf(Event.Priority.HIGH, Event.Priority.MID, Event.Priority.LOW),
+            eventOrder,
+            "Event listeners should be called in priority order"
+        )
     }
 }

@@ -20,7 +20,6 @@ package dev.lyzev.api.event.test
 
 import dev.lyzev.api.event.CancellableEvent
 import dev.lyzev.api.event.EventListener
-import dev.lyzev.api.event.EventManager
 import dev.lyzev.api.event.on
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
