@@ -85,10 +85,10 @@ tasks.register("publishToMavenCentral") {
     dependsOn("publishMavenPublicationToLocalRepository")
 
     doLast {
-        exec {
+        providers.exec {
             commandLine("sh", "-c", "cd build/repo && zip -r ../../build.zip ./*")
         }
-        exec {
+        providers.exec {
             commandLine(
                 "sh",
                 "-c",
