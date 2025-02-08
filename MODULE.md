@@ -12,7 +12,7 @@
     <a href="https://lyzev.dev/discord">
         <img src="https://wsrv.nl/?url=https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy-minimal/social/discord-plural_vector.svg&w=64&h=64" alt="Discord">
     </a>
-    <a href="https://schizoiddevelopment.github.io/piko/">
+    <a href="https://schizoid.lyzev.dev/piko/">
         <img src="https://wsrv.nl/?url=https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy-minimal/documentation/ghpages_vector.svg&w=64&h=64" alt="Documentation">
     </a>
     <a href="https://github.com/SchizoidDevelopment/piko/pulls">
